@@ -29,7 +29,7 @@
                     <!-- ... -->
                     <archive>
                         <manifest>
-                            <mainClass>com.github.rodindenis.example.broadcast.receiver.Main</mainClass>
+                            <mainClass>com.github.rodindenis.example.multicast.receiver.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

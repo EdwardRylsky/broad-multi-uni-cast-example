@@ -1,4 +1,4 @@
-package com.github.rodindenis.example.broadcast.publisher;
+package com.github.rodindenis.example.multicast.publisher;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -8,14 +8,11 @@ import java.net.InetAddress;
 public class Main {
     public static void main(String[] args) throws IOException {
         var socket = new DatagramSocket();
-        socket.setBroadcast(true);
-
-        byte[] buffer = "Hello".getBytes();
-
-        var address = InetAddress.getByName("255.255.255.255");
+        var group = InetAddress.getByName("230.0.0.0");
+        var buf = "Hello".getBytes();
 
         var packet
-                = new DatagramPacket(buffer, buffer.length, address, 9999);
+                = new DatagramPacket(buf, buf.length, group, 8888);
         socket.send(packet);
         socket.close();
     }
